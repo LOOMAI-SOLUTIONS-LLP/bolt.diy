@@ -42,17 +42,11 @@ export const links: LinksFunction = () => [
 ];
 
 const inlineThemeCode = stripIndents`
-  setTutorialKitTheme();
-
-  function setTutorialKitTheme() {
-    let theme = localStorage.getItem('bolt_theme');
-
-    if (!theme) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
-    document.querySelector('html')?.setAttribute('data-theme', theme);
-  }
+  // Directly set dark theme to prevent FOUC and ensure consistency.
+  document.querySelector('html')?.setAttribute('data-theme', 'dark');
+  // Also update localStorage to 'dark' in case it holds an old value.
+  // This aligns with the behavior in the updated theme.ts store.
+  localStorage.setItem('bolt_theme', 'dark');
 `;
 
 export const Head = createHead(() => (
