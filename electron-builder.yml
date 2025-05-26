@@ -18,7 +18,7 @@ asarUnpack:
   - electron-update.yml
 
 mac:
-  icon: assets/icons/boltgcp.png
+  icon: assets/icons/icon.icns
   target:
     - dmg
   identity: null
@@ -30,14 +30,14 @@ mac:
   gatekeeperAssess: false
 
 win:
-  icon: assets/icons/boltgcp.png
+  icon: assets/icons/icon.ico
   target:
     - nsis
   signDlls: false
   artifactName: ${name}-${version}-${os}-${arch}.${ext}
 
 linux:
-  icon: assets/icons/boltgcp.png
+  icon: assets/icons/icon.png
   target:
     - AppImage
     - deb
